@@ -1,3 +1,10 @@
+//----------------------------------------------------------------------//
+//  Design Note
+//----------------------------------------------------------------------//
+//  1. Instruction Memory Depth (IMEM): At least 8  kiB to run the "isa_1b.hex" or "isa_4b.hex"
+//  2. Data        Memory Depth (DMEM): At least 64 kiB (0x0000_0000 - 0x0000_FFFF)
+//  3. IMEM and DMEM are separate memory blocks.
+
 //***TOP***
 module pipelined(
 	input logic i_clk, // Xung nhịp đầu vào
