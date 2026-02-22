@@ -1,4 +1,22 @@
 //**EX STAGE**
+
+module mux3_1(
+	input logic [31:0] rs_EX,
+	input logic [31:0] data_WB,
+	input logic [31:0] alu_result_MEM,
+	input logic [1:0] forward,
+	output logic [31:0] rs_ex_true
+);
+	always_comb begin
+	case (forward)
+			2'b00: rs_ex_true = rs_EX;
+			2'b01: rs_ex_true = data_WB;
+			2'b10: rs_ex_true = alu_result_MEM;
+			default: rs_ex_true = rs_EX;
+	endcase
+	end
+endmodule
+
 //ALU
 module mux16_1( //32bit
 	input logic [31:0] s0,
